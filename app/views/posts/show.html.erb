@@ -1,6 +1,24 @@
+  
+  
+<article class="card" style="width:22rem;">
+  <% if @post.image_data? %>
+    <%= image_tag @post.image_url, class: 'card-img-top' %>
+    <% end %>
+
    <h2><%= @post.name %></h2>
-      <p><%= @post.content %></p>
-      <p>
-      <a href="<%= posts_path%>" class="btn btn-success">Reveneir aux a</a>
+      <p><%= @post.content %> </p>
+             <p>
+Ingredients:
+<%= @post.ingredients.map(&:name).join(', ') %>
+</p>
+  <p>
+  <span class="material-icons">date_range</span>
+   <%= @post.updated_at.strftime('%d %B  %Y') %> 
+   </p>
+    
+  
+</article>
       
-      </p>
+      <a href="<%= posts_path%>" class="btn btn-success">Reveneir aux list</a>
+      
+   

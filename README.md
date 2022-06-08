@@ -1,24 +1,19 @@
-# README
+## Getting started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements
 
-Things you may want to cover:
+- Ruby 3.1.1 or higher
+- bundler - `gem install bundler`
+- MySQL
 
-* Ruby version
+### Initial setup
 
-* System dependencies
+1. Customize the `config/database.yml`
+2. Run `setup`
 
-* Configuration
+### Running MisterCocktail ! 
 
-* Database creation
+1. Run `rails s`
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

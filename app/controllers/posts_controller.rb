@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+
+
   def index
 
     @posts = Post.all
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
 
   def post_params
 
-    params.require(:post).permit(:name,:content, ingredient_ids:[])
+    params.require(:post).permit(:name, :content,:image, ingredient_ids:[]) 
 
   end
 
@@ -54,5 +56,9 @@ class PostsController < ApplicationController
   redirect_to posts_path
   end
 
+  def search
+    
+    @posts = Post.where("name LIKE ?", "%" + params[:q] +"%")
 
+  end
 end

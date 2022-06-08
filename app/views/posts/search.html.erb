@@ -1,0 +1,38 @@
+
+
+<h1>Recherche des recettes</h1>
+<% if !@posts.empty? %>
+<% @posts.each do |post| %>
+<article class="card cocktail">
+
+  <% if post.image_data? %>
+    <%= image_tag post.image_url, class: 'card-img-top' %>
+        <div class="card-body">
+   <h2><%= post.name %></h2>
+   <p><%= post.content %></p>
+       </div>
+                </article>
+  <% end %>
+
+<p>
+
+
+Ingredients:
+<%= post.ingredients.map(&:name).join(', ') %>
+
+
+</p>
+
+   <p>
+<a href="<%= post_path(post.id)%>" class="btn btn-success">Lire la suite</a>
+<a href="<%= edit_post_path(post.id)%>" class="btn btn-success">Editer</a>
+<a href="<%= post_path(post.id)%>" class="btn btn-danger" data-turbo-confirm="etes vous Sur ?" data-turbo-method="DELETE">delete</a>
+
+
+</p>
+<% end %>
+
+  <% else %>
+    pas de resultat
+  <% end %>
+
