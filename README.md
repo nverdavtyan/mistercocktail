@@ -3,13 +3,13 @@
 ### Requirements
 
 - Ruby 3.1.1 or higher
-- bundler - `gem install bundler`
-- MySQL
+- DB - `gem install bundler`
+- MySQL - `sudo mysql.server start`
 
 ### Initial setup
 
 1. Customize the `config/database.yml`
-2. Run `setup`
+2. Run `rails db:create  db:migrate`
 
 ### Running MisterCocktail ! 
 
