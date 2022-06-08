@@ -1,0 +1,8 @@
+<h1>Ingredients</h1>
+<% @ingredients.each do |i| %>
+   <h2><%= i.name %></h2>
+   
+    <a href="<%= edit_ingredient_path(i.id)%>" class="btn btn-success">Editer</a>
+    <a href="<%= post_path(i.id)%>" class="btn btn-danger" data-turbo-confirm="etes vous Sur ?" data-turbo-method="DELETE">delete</a>
+
+   <% end %>

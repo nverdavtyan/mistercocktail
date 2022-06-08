@@ -1,0 +1,20 @@
+<h1>Creer l'article </h1>
+
+
+<%= form_for @ingredient do |f| %>
+
+<div class="form-group">
+
+<label>Nom de l'ingredient </label>
+<%= f.text_field :name,  class: 'form-control' %>
+</div>
+
+
+<div class="form-group">
+<button type="submit" class="btn btn-success">Creer ingredient</button>
+</div>
+
+
+<%end%> 
+
+   <a href="<%= ingredients_path%>" class="btn btn-primary" >List d'ingredient</a>
