@@ -1,3 +1,5 @@
+## MisterCocktail
+
 ## Getting started
 
 ### Requirements
@@ -9,7 +11,7 @@
 ### Initial setup
 
 1. Customize the `config/database.yml`
-2. Run `rails db:create  db:migrate`
+2. Run `rails db:create  db:migrate  db:seed`
 
 ### Running MisterCocktail ! 
 

@@ -3,5 +3,27 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+Ingredient.destroy_all
+ingredients = [
+   {name: "Sucre"},
+   {name: "Rome"},
+   {name: "Aperol"},
+   {name: "Citron"},
+   {name: "Cointreau"},
+   {name: "Orange"},
+   {name: "Coconut créme"},
+   {name: "Menthe"},
+   {name: "Prosecco"},
+   {name: "Eau gazeuse"},
+]
+
+
+  ingredients.each do |ingredient|
+    Ingredient.create ingredient
+ end
+
+
+
+
+
