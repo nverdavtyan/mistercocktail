@@ -20,7 +20,7 @@
        </div>
 
  <p>
-Ingredients: <%= post.ingredients.map(&:name).join(', ') %>
+Ingrédients: <%= post.ingredients.map(&:name).join(', ') %>
 </p>
 
  <p>
@@ -31,7 +31,7 @@ Ingredients: <%= post.ingredients.map(&:name).join(', ') %>
 
 <a href="<%= post_path(post.id)%>" class="btn btn-sm btn-primary">Lire la suite</a>
 <a href="<%= edit_post_path(post.id)%>" class="btn btn-sm btn-success">Modifier</a>
-<a href="<%= post_path(post.id)%>" class="btn btn-sm btn-danger" data-turbo-confirm="etes vous Sur ?" data-turbo-method="DELETE">Supprimer</a>
+<a href="<%= post_path(post.id)%>" class="btn btn-sm btn-danger" data-turbo-confirm="êtes-vous sûr de vouloir supprimer ?" data-turbo-method="DELETE">Supprimer</a>
 
 <div>
                 </article>

@@ -1,35 +1,46 @@
 
-
 <h1>Recherche des recettes</h1>
+
 <% if !@posts.empty? %>
+
+ <div class="row">
 <% @posts.each do |post| %>
+       
+   <div class="col-3">
 <article class="card cocktail">
 
   <% if post.image_data? %>
-    <%= image_tag post.image_url, class: 'card-img-top' %>
+    <%= image_tag post.image_url, class: 'card-img' %>
+      <% end %>
         <div class="card-body">
    <h2><%= post.name %></h2>
-   <p><%= post.content %></p>
-       </div>
-                </article>
-  <% end %>
-
-<p>
-
-
-Ingredients:
-<%= post.ingredients.map(&:name).join(', ') %>
-
-
-</p>
-
    <p>
-<a href="<%= post_path(post.id)%>" class="btn btn-success">Lire la suite</a>
-<a href="<%= edit_post_path(post.id)%>" class="btn btn-success">Editer</a>
-<a href="<%= post_path(post.id)%>" class="btn btn-danger" data-turbo-confirm="etes vous Sur ?" data-turbo-method="DELETE">delete</a>
+   <%= post.content.truncate(100) %></p>
+       </div>
 
-
+ <p>
+Ingrédients: <%= post.ingredients.map(&:name).join(', ') %>
 </p>
+
+ <p>
+  <span class="material-icons">date_range</span>
+   <%= post.updated_at.strftime('%d %B %Y') %> 
+   </p>
+ <div class="text-center m-1">
+
+<a href="<%= post_path(post.id)%>" class="btn btn-sm btn-primary">Lire la suite</a>
+<a href="<%= edit_post_path(post.id)%>" class="btn btn-sm btn-success">Modifier</a>
+<a href="<%= post_path(post.id)%>" class="btn btn-sm btn-danger" data-turbo-confirm="etes vous Sur ?" data-turbo-method="DELETE">Supprimer</a>
+
+<div>
+                </article>
+                       </div>
+                  
+   
+   
+
+          
+
 <% end %>
 
   <% else %>
