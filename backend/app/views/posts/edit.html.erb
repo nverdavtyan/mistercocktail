@@ -18,6 +18,7 @@
 <%= f.label :image %>
 <%= f.file_field :image, class: 'form-control' %>
 </div>
+
 <%= f.label "Ingredients" %><br />
   <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |b| %>
     <div class="collection-check-box">

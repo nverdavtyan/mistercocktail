@@ -3,12 +3,15 @@ class PostsController < ApplicationController
   def index
 
     @posts = Post.all
+    
+    render json: @posts.to_json(:include => :ingredients)
 
   end
 
   def show 
 
     @post = Post.find(params[:id])
+    render json: @post.to_json(:include => :ingredients)
 
   end
 
@@ -35,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
      post = Post.create(post_params)
      if post.save
      redirect_to posts_path, notice: "La recette a été crée !"
@@ -63,6 +65,6 @@ class PostsController < ApplicationController
   def search
     
     @posts = Post.where("name LIKE ?", "%" + params[:q] +"%")
-
+    render json: @posts.to_json(:include => :ingredients)
   end
 end
