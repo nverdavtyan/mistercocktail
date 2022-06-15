@@ -18,8 +18,7 @@ export default{
      props:{
          id: Number,
          name:String,
-         content:String,
-         ingredients:Array
+         content:String
      },
 
 }
