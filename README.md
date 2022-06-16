@@ -21,7 +21,7 @@
 
 # frontend
 1. frontend `cd frontend`
-2. frontend `npm install`
+2. Install `npm install`
 3. Run `npm run dev`
    
    

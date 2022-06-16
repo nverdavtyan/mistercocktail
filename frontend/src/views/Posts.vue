@@ -1,14 +1,11 @@
-<template>
-<div class="container">
+    <template>
+       <div class="container">
         <div class="d-flex m-5 justify-content-center" style="width: 25rem;" role="search">
           <input class="form-control  " v-model="searchQuery" type="search" placeholder="Recherche" aria-label="Search">
-        </div>
-   <div class="row">
+         </div>
+         <div class="row">
         <Card :key="post.id" v-for="post in searchedResult" :name="post.name" :content="post.content" :id="post.id"  />
-
-  
-  
-    </div>
+       </div>
       </div>
 </template>
 
@@ -47,8 +44,7 @@ export default{
         return this.posts
    
       }
-          }
-
+     }
   }
  
 

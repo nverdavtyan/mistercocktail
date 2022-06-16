@@ -2,8 +2,8 @@
   <router-link :to="{name:'posts'}" class="btn btn-primary">back to list</router-link>
       <article class="card cocktail m-4">
                <div class="card-body">
-<h1>{{ post.name}}</h1>
-<p>{{ post.content }}</p>
+            <h1>{{ post.name}}</h1>
+            <p>{{ post.content }}</p>
 
 <span><b>Ingredients:</b></span>
 <div :key="index" v-for="(ingredient, index) in post.ingredients" >

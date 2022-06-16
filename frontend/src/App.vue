@@ -14,13 +14,9 @@ import { RouterLink, RouterView } from 'vue-router'
           <router-link :to="{name:'posts'}" class="nav-link "> Cocktails  </router-link>
           </li>
           <li class="nav-item">
-           <router-link :to="{name:'posts'}" class="nav-link "> Ajouter un cocktail  </router-link>
+           <router-link :to="{name:'newpost'}" class="nav-link "> Ajouter un cocktail  </router-link>
           </li>
-        </ul>
-
-     
-    
-         
+        </ul> 
       </div>
     </div>
   </nav>

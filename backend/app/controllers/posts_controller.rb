@@ -35,10 +35,12 @@ class PostsController < ApplicationController
     @post = Post.new
     @ingredients = Ingredient.all
 
+
   end
 
   def create
      post = Post.create(post_params)
+     render json: @posts.to_json(:include => :ingredients)
      if post.save
      redirect_to posts_path, notice: "La recette a été crée !"
       else 
