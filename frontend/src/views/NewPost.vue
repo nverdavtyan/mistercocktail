@@ -10,9 +10,15 @@
   <textarea type="text" class="form-control" v-model="content">  </textarea>
 </div>
 
+<div class="form-group">
+  <label>Image</label>
+  <input type="file" class="form-control" v-on:change="image_data" />  
+</div>
 
-<span v-for="item in ingredients" >
-<input type="checkbox"> <span class="checkbox-label" /> {{item.name}} <br>
+
+<span v-for="item in ingredients_data" >
+<input type="checkbox" v-model="ingredients"> 
+<span class="checkbox-label" /> {{item.name}} <br>
 </span>
 
 <div class="mt-3">
@@ -30,9 +36,11 @@ export default{
 
   data () {
     return {
-      ingredients:[],
+      ingredients_data:[],
       name:'',
-
+      content:'',
+      image_data:'',
+      ingredients:[]
     
 
     };
@@ -40,16 +48,15 @@ export default{
   },
   methods: {
       onCreatePost(){
-        
     axios
-      .post('http://localhost:3000/ingredients',
-      {name: this.name }
+      .post('http://localhost:3000/posts',
+      {name: this.name , content:this.content,image_data:this.image_data, ingredients:this.ingredients}
       )
       .then((response) => {
           console.log(response)
    
       })   
-      }
+      },
   
   },
     mounted(){         
@@ -57,8 +64,8 @@ export default{
     axios
       .get(URL)
       .then((response) => {
-        this.ingredients = response.data
-        console.log(this.ingredients)
+        this.ingredients_data = response.data
+        console.log(this.ingredients_data)
       })
   },
    

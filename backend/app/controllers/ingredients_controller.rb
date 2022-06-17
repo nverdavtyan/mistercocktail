@@ -30,7 +30,8 @@ class IngredientsController < ApplicationController
   def create
 
   ingredient = Ingredient.create(ingredient_params)
-    redirect_to ingredients_path
+  render json: ingredient
+   # redirect_to ingredients_path
    end
 
   def ingredient_params

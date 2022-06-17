@@ -67,3 +67,8 @@ span{
 ul li{
 color: #000000 !important;
 }
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

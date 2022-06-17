@@ -3,7 +3,7 @@
        <article class="card cocktail h-80">
       <div class="card-body">
       <h4 class="card-title">{{ name}}</h4>
-     <p class="card-text">{{ content}}</p>
+     <p class="card-text truncate">{{ content}}</p>
       <router-link :to="{name:'postdetails', params: {id: id}}" class="btn btn-primary ">Details</router-link>
       </div>
   </article>

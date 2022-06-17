@@ -2,12 +2,12 @@
 <template>
 
     <div class="d-flex m-3 justify-content-center" style="width: 20rem;" role="search">
-          <input class="form-control  "  v-model="query" v-on:input="getSearchResults" type="search" placeholder="Recherche" aria-label="Search">
+          <input class="form-control"  v-model="query" @keyup="getSearchResults(query)" type="search" placeholder="Recherche" aria-label="Search">
          </div>
 
         <div v-if="query !=='' ">
 <ul class="list-group">
-   <li v-for="item in posts" class="">
+   <li v-for="item in posts" class="" :key="item.id">
          <router-link :to="{name:'postdetails', params: {id: item.id}}" class="nav-link">{{item.name}}</router-link>
           
         </li>
@@ -36,9 +36,9 @@ export default{
   },
  
 methods:{
-  getSearchResults(){
-        console.log(this.query)
-    axios.get(`http://localhost:3000/search?q=${this.query}`)
+  getSearchResults(query){
+        console.log(query)
+    axios.get(`http://localhost:3000/search?q=${query}`)
       .then((res) => {
         this.posts = res.data
         console.log(this.posts)

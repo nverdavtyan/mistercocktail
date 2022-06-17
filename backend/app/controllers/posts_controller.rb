@@ -40,12 +40,12 @@ class PostsController < ApplicationController
 
   def create
      post = Post.create(post_params)
-     render json: @posts.to_json(:include => :ingredients)
-     if post.save
-     redirect_to posts_path, notice: "La recette a été crée !"
-      else 
-      redirect_to new_post_path, notice: "Veuillez remplir tous les champs correctement !"
-    end
+     render json: post.to_json(:include => :ingredients)
+    #  if post.save
+    #  redirect_to posts_path, notice: "La recette a été crée !"
+    #   else 
+    #   redirect_to new_post_path, notice: "Veuillez remplir tous les champs correctement !"
+    # end
   end
 
 
