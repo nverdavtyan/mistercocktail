@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 
   def search
     
-    @posts = Post.where("name LIKE ?", "%" + params[:q] +"%")
+    @posts = Post.where("name LIKE ?", "%" + params[:q] +"%").limit(2)
     render json: @posts.to_json(:include => :ingredients)
   end
 end

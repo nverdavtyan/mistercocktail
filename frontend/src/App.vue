@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Dropdown from 'vue-simple-search-dropdown';
 </script>
 
 <template>
@@ -17,15 +18,24 @@ import { RouterLink, RouterView } from 'vue-router'
            <router-link :to="{name:'newpost'}" class="nav-link "> Ajouter un cocktail  </router-link>
           </li>
         </ul> 
+
+      
       </div>
     </div>
+ 
   </nav>
+
 </header>
 
 
   <RouterView />
   <Posts/>
 </template>
+
+
+
+
+
 
 <style>
 @import '@/assets/base.css';

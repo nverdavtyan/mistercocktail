@@ -14,10 +14,13 @@ module Mistercocktail
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options,:head]
+       origins '*'
+        resource '*',
+         headers: :any,
+         methods: :any
       end
     end
+
 
    # config.autoload_paths << "#{Rails.root}/app/uploaders"
     

@@ -1,6 +1,6 @@
 <template>
      <div class="col-lg-3 col-xs-12">
-       <article class="card cocktail h-100">
+       <article class="card cocktail h-80">
       <div class="card-body">
       <h4 class="card-title">{{ name}}</h4>
      <p class="card-text">{{ content}}</p>

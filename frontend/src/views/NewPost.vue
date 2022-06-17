@@ -31,9 +31,10 @@ export default{
   data () {
     return {
       ingredients:[],
-      title:'',
-      description:'',
-  
+      name:'',
+
+    
+
     };
 
   },
@@ -41,8 +42,8 @@ export default{
       onCreatePost(){
         
     axios
-      .post('http://localhost:3000/posts/create',
-      {name: this.name, content: this.content,}
+      .post('http://localhost:3000/ingredients',
+      {name: this.name }
       )
       .then((response) => {
           console.log(response)
