@@ -46,18 +46,6 @@ methods:{
       })
   }
 }
-  // methods:{
-  // getSearchResults: function(){
-  //     console.log(this.query)
-  //     axios.get(API_URL+this.query).then((res)=>{
-  //       console.log(this.searchResults)
-  //         this.searchResults = res.data     
-  //         }).catch((e)=>{
-  //           console.log("Error" + e)
-  //         })
-  //     }
-  // }
- 
 
 }
 
